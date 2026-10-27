@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan UTS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav aria-label="Navigasi Utama">
+        <ul class="nav-list">
+            <li>
+                <a href="index.html">Beranda</a>
+            </li>
+            <li>
+                <a href="kegiatan.html">Kegiatan</a>
+            </li>
+            <li>
+                <a href="daftar.html" aria-current="page">Pendaftaran</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Persiapan untuk UTS Praktikum PSW 1</h1>
+        <figure>
+            <img src="images/zHeader.jpg" srcset="images/zHeader.jpg 320w, images/zHeader.jpg 640w"
+                sizes="(min-width: 48rem) 50vw, 90vw" width="640" height="360" alt="Motivation">
+        </figure>
+    </header>
+    <main>
+        <h2>Wajib Isi yak!</h2>
+        <!-- Perbaikan 1: Mengubah regristation-form menjadi registration-form -->
+        <form class="card registration-form" action="index.html" method="get">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input id="nama" name="nama" autocomplete="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" autocomplete="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="game">Undertale or Deltarune</label>
+                <select id="game" name="game" required>
+                    <option value="">Select Your World!</option>
+                    <option value="ut">Undertale</option>
+                    <option value="dt">Deltarune</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="kode">Your ID Number</label>
+                <input id="kode" name="kode" type="text" inputmode="numeric" pattern="[0-9]{6}"
+                    aria-describedby="kode-help" required>
+                <p id="kode-help"> Contoh:111102. Six numbers only!</p>
+            </div>
+
+            <fieldset class="form-group">
+                <legend>Akankah Kau Hadir?</legend>
+                <div class="radio-group">
+                    <div>
+                        <input id="here" name="mode" type="radio" value="here" required>
+                        <label for="here">Hadir!</label>
+                    </div>
+
+                    <div>
+                        <!-- Perbaikan 2: Mengubah value="here" pada 'gone' menjadi 'gone' -->
+                        <input id="gone" name="mode" type="radio" value="gone" required>
+                        <label for="gone">Tidak hadir..</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label>Jumlah Tiket</label>
+                <input type="number" min="1" max="10" name="jumlah_tiket" required>
+            </div>
+
+            <!-- Perbaikan 3: Merapikan struktur div checkbox agar tag tertutup dengan benar -->
+            <fieldset class="form-group">
+                <legend>Topic to discuss</legend>
+                <div class="checkbox-group">
+                    <div>
+                        <input type="checkbox" id="topik-dom" name="topik" value="dom" required>
+                        <label for="topik-dom">DOM HTML</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="topik-css" name="topik" value="css" required>
+                        <label for="topik-css">CSS Web</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="catatan">Note</label>
+                <textarea id="catatan" name="catatan" rows="4" maxlength="300"></textarea>
+            </div>
+
+            <button type="submit">Sign Up!</button>
+        </form>
+    </main>
+    <script src="main.js"></script>
+    <footer id="kontak">
+        <p>&copy; 2026 Stay Determined.</p>
+        <address>Email: Underground@example.ac.id</address>
+    </footer>
+</body>
+
+</html>

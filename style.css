@@ -1,0 +1,360 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root{
+    --brand: grey;
+    --space: 1rem;
+    --surface: black;
+    --ink: white;
+}
+
+body{
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background-color: black;
+}
+
+header {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: var(--surface);
+    border: 1px solid gold;
+}
+
+main {
+    width: 100%;
+    max-width: 60rem;
+    padding: var(--space);
+    border: 2px solid gold;
+    background: var(--surface);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+    outline: 3px solid red !important;
+    outline-offset: 3px;
+}
+
+.notice {
+    color: red;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid red;
+    outline-offset: 3px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+}
+
+.data-table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+}
+
+.data-table caption {
+    padding: 0.75rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid gold;
+    padding: 12px;
+    text-align: left;
+}
+
+.data-table thead th {
+    color: white;
+    background-color: var(--surface);
+}
+
+
+.card {
+    padding: var(--space-2, 1rem);
+    flex: 1 1 200px;
+    max-width: 260px; /* Batasi lebar maksimal agar tidak terlalu melebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Menyamakan tata letak konten di dalam card */
+    border: 1px solid gold;
+    background: var(--surface);
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card h3, .card p {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.card a{
+    align-self: start;
+}
+
+.catalog {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    container-type: inline-size;
+}
+
+.catalog > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+nav {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: black;
+    border: 1px solid gold;
+    border-radius: 12px;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    position: relative;
+    display: block;
+    padding: 0.7rem 1.2rem;
+    color: #FFFFFF;
+    background-color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    /* Base border starts white/subtle */
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: color 0.2s ease, border-color 0.3s ease;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Thickness of your border */
+    background-color: gold;
+    transform: scaleX(0); /* Starts hidden (0 width) */
+    transform-origin: left; /* Slides in from the left */
+    transition: transform 0.3s ease-in-out; /* Controls the sliding speed */
+}
+
+.nav-list a:hover {
+    color: gold;
+    border-color: gold;
+}
+
+.nav-list a:hover::after {
+    transform: scaleX(1); /* Slides out to full width */
+}
+
+.nav-list a[aria-current="page"] {
+    color: gold;
+    border-color: gold;
+}
+
+.nav-list a[aria-current="page"]::after {
+    transform: scaleX(1); /* Keeps the border visible for the current page */
+}
+
+.nav-list a:focus-visible {
+    outline: 3px solid red;
+    outline-offset: 3px;
+}
+
+nav {
+    background-color: black;
+}
+
+.nav-list a {
+    color: #FFFFFF;
+}
+
+.nav-list a:hover {
+    background-color: var(--surface);
+}
+
+.nav-list a[aria-current="page"] {
+    background-color: var(--surface);
+    color: gold;
+}
+
+.nav-list a:focus-visible {
+    outline: 3px solid gold;
+    outline-offset: 3px;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.registration-form label {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.registration-form input:not([type="radio"]):not([type="checkbox"]),
+.registration-form select,
+.registration-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #111;
+    border: 1px solid gold;
+    color: var(--ink);
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.registration-form input:focus,
+.registration-form select:focus,
+.registration-form textarea:focus {
+    outline: 2px solid gold;
+    border-color: gold;
+}
+
+.registration-form fieldset {
+    border: 1px solid gold;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.registration-form legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.radio-group div,
+.checkbox-group div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.radio-group input,
+.checkbox-group input {
+    accent-color: gold;
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.form-group small {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+.submit-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: black;          /* Black background by default */
+    color: #FFFFFF;                   /* White text by default */
+    font-weight: bold;
+    border: 2px solid gold;           /* Gold border */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+   background-color: black;          /* Background stays black */
+    color: gold;
+}
+
+button[type="submit"] {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--surface);
+    color: gold;
+    font-weight: bold;
+    border: 2px solid gold; /* Gold border */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    margin-top: 0.5rem;
+}
+
+button[type="submit"]:hover {
+    background-color: gold;
+    color: black;
+}
+
+@media (max-width: 480px) {
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-list a {
+        text-align: center;
+    }
+}
+
+@container (min-width: 30rem) {
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        transition: none;
+    }
+}
